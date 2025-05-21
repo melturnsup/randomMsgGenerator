@@ -22,8 +22,7 @@ const randMsg = () => {
 
   //connecting the random number generator as the index of the array
   const index = randInt();
-  result = randMsgArr[index];
-  console.log(result);
+  const result = randMsgArr[index];
   return result;
   
 };
@@ -31,3 +30,10 @@ const randMsg = () => {
 /* final test
 randMsg();
 */
+
+//Connecting randMsg function to the button
+
+document.getElementById("msgButton").addEventListener("click", () => {
+  const message = randMsg();
+  document.getElementById("displayMessage").textContent = message;
+});
