@@ -2,34 +2,51 @@
 
 const randMsg = () => {
 
-  //Array of different positive messages
-  const randMsgArr = [
-  "Nothing is impossible. The word itself says i'm possible!",
-  "Good luck today!", 
-  "Mistakes are part of the learning process!",
-  "The world is better because I am in it!",
-  "I trust my intuition!"
+  //Arrays of different positive messages
+
+  const subjects = [
+    "Your mind", 
+    "Your effort", 
+    "Your kindness", 
+    "Your potential"
   ];
 
-  //Generates a random intiger between 0 and 4, the amount of items in the array.
-  let randInt = () => {
-  return Math.floor(Math.random() * randMsgArr.length);
-  };
+  const actions = [
+    "can achieve great things", 
+    "is more powerful than you think", 
+    "makes a difference", 
+    "is inspiring", 
+    "shines bright"
+  ];
+
+  const outcomes = [
+    "keep going!", 
+    "you’re doing amazing!", 
+    "the world needs your light.", 
+    "believe in yourself.", 
+    "you’re on the right path."
+  ];
+
+  //Generates a random index within an array
+  const randIndex = (arr) => Math.floor(Math.random() * arr.length);
+  
 
   /* Test of random intiger generator
-  console.log(randInt());
-  */
+  console.log(randIndex(outcomes));
+*/
+  //connecting random index with the 3 arrays
+  const part1 = subjects[randIndex(subjects)];
+  const part2 = actions[randIndex(actions)];
+  const part3 = outcomes[randIndex(outcomes)];
 
-  //connecting the random number generator as the index of the array
-  const index = randInt();
-  const result = randMsgArr[index];
-  return result;
+  return `${part1} ${part2}, ${part3}`
+  
   
 };
 
-/* final test
-randMsg();
-*/
+
+randMsg()
+
 
 //Connecting randMsg function to the button
 
